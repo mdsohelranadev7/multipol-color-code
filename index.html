@@ -1,20 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
+    <link rel="stylesheet" href="src/output.css">
+    <link rel="stylesheet" href="src/all.min.css">
 </head>
+
 <body id="sk">
-    
 
 
 
 
-<button id="cl" onclick="sdf()">click</button>
-<button id="csl">click</button>
+    <div class="flex justify-end max-w-main bg-amber-500 mx-auto">
+
+        <!-- <button id="cl" onclick="sdf()"></button> -->
+        <span class="text-2xl p-3" id="cl" onclick="sdf()"><i class="fa-solid fa-moon"></i></span>
+        <!-- <button id="csl">click</button> -->
+        <span class="text-2xl p-3" id="csl"><i class="fa-regular fa-lightbulb"></i></span>
+    </div>
+
+    <div id="hext" class="max-w-main mx-auto py-30 bg-[#f73d25] mt-2 text-center flex items-center justify-center flex-col">
+        <h2 class=" text-4xl uppercase">change the color</h2>
+        <div class="flex items-center ">
+            <input id="input" class="block text-center m-5 border" type="text" placeholder="Enter Your Color">
+        <button class=" rounded-2xl hover:bg-red-300 hover:text-black w-16 bg-gray-600 text-white" id="copybtn">copy</button>
+        </div>
+        <button id="clbtn"
+            class="border border-[#DDE097] px-5 py-3 text-white bg-black rounded-2xl hover:bg-amber-100 hover:text-black duration-500 ">change
+            color</button>
+    </div>
 
     <script src="js/script.js"></script>
 </body>
+
 </html>
