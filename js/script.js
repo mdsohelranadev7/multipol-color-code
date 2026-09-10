@@ -29,49 +29,52 @@ csl.addEventListener('click', () => {
 let input = document.getElementById("input")
 let clbtn = document.getElementById("clbtn")
 let copybtn = document.getElementById("copybtn")
-
+let hext = document.getElementById("hext")
 
 clbtn.addEventListener('click', () => {
     const bgclo = bgcolorcng()
     hext.style.background = bgclo
-    
-    input.value =bgclo
+    input.value = bgclo
 
-
-    copybtn.addEventListener('click',()=>{
-        navigator.clipboard.writeText(input.value)
-        
-    })
-
-    
 })
+copybtn.addEventListener('click', () => {
+    navigator.clipboard.writeText(input.value)
 
-copybtn.addEventListener('click',()=>{
-
-    document.getElementById('copybtn').innerHTML='copied'
+    document.getElementById('copybtn').innerHTML = 'copied'
 
 
-    setTimeout(()=>{
-copybtn.innerHTML = "copy"
-    },1000)
-    
+
+    tst.classList.remove("translate-x-full", "opacity-0")
+     tst.classList.add("opacity-100");
+
+    setTimeout(() => {
+        tst.classList.add("translate-x-full", "opacity-0")
+        tst.classList.remove("opacity-100")
+    }, 1000)
+
+
+
+
+
+
+    setTimeout(() => {
+        copybtn.innerHTML = "copy"
+    }, 1000)
+
+
+
+
 })
-
-
-
-
-
 
 function bgcolorcng() {
     let red = Math.floor(Math.random() * 255)
     let green = Math.floor(Math.random() * 255)
-    let blue= Math.floor(Math.random() * 255)
+    let blue = Math.floor(Math.random() * 255)
 
 
-    return`#${red.toString(16)}${green.toString(16)}${blue.toString(16)}`
+    return `#${red.toString(16).padStart(2, '0')}${green.toString(16).padStart(2, '0')}${blue.toString(16).padStart(2, '0')}`
 
 }
-
 
 
 
