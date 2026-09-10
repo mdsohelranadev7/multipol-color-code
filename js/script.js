@@ -45,7 +45,7 @@ copybtn.addEventListener('click', () => {
 
 
     tst.classList.remove("translate-x-full", "opacity-0")
-     tst.classList.add("opacity-100");
+    tst.classList.add("opacity-100");
 
     setTimeout(() => {
         tst.classList.add("translate-x-full", "opacity-0")
@@ -77,6 +77,10 @@ function bgcolorcng() {
 }
 
 
+let text = document.getElementById("text");
+let deletes = document.getElementById("deletes");
 
+deletes.addEventListener("click", () => {
+    text.remove();
 
-
+});
