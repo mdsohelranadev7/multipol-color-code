@@ -84,3 +84,40 @@ deletes.addEventListener("click", () => {
     text.remove();
 
 });
+
+
+
+
+
+
+
+
+
+
+
+// HW ***********************************
+
+
+let inputs = document.getElementById("inputs")
+let startbtn = document.getElementById("startbtn")
+let nameMiss = document.getElementById("nameMiss")
+
+startbtn.addEventListener("click",()=>{
+
+  if(  inputs.value == ""){
+    nameMiss.removeAttribute("hidden")
+
+  }
+
+  else{
+    startPart.style.display="none"
+  }
+
+
+})
+
+
+
+
+
+
