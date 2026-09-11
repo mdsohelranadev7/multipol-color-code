@@ -90,17 +90,16 @@ deletes.addEventListener("click", () => {
 
 
 
-
-
-
-
-
 // HW ***********************************
 
 
 let inputs = document.getElementById("inputs")
 let startbtn = document.getElementById("startbtn")
 let nameMiss = document.getElementById("nameMiss")
+let playerOne = document.getElementById("playerOne")
+let inputTwo = document.getElementById("inputTwo")
+let giveNumber = document.getElementById("giveNumber")
+
 
 startbtn.addEventListener("click",()=>{
 
@@ -115,6 +114,15 @@ startbtn.addEventListener("click",()=>{
 
 
 })
+
+
+startbtn.addEventListener('click',()=>{
+    playerOne.removeAttribute("hidden")
+})
+
+
+
+
 
 
 
