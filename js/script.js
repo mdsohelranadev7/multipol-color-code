@@ -97,7 +97,7 @@ let inputs = document.getElementById("inputs")
 let startbtn = document.getElementById("startbtn")
 let nameMiss = document.getElementById("nameMiss")
 let playerOne = document.getElementById("playerOne")
-let inputTwo = document.getElementById("inputTwo")
+let inputTwo = document.getElementById("inputone")
 let giveNumber = document.getElementById("giveNumber")
 
 
