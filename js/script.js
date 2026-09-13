@@ -101,31 +101,44 @@ let inputTwo = document.getElementById("inputone")
 let giveNumber = document.getElementById("giveNumber")
 
 
-startbtn.addEventListener("click",()=>{
+startbtn.addEventListener("click", () => {
 
-  if(  inputs.value == ""){
-    nameMiss.removeAttribute("hidden")
+    if (inputs.value == "") {
+        nameMiss.removeAttribute("hidden")
 
-  }
+    }
 
-  else{
-    startPart.style.display="none"
-  }
+    else {
+        startPart.style.display = "none"
+    }
 
 
 })
 
 
-startbtn.addEventListener('click',()=>{
+startbtn.addEventListener('click', () => {
     playerOne.removeAttribute("hidden")
 })
 
+let countdownsElement = document.getElementById("countdowns");
+let increess = document.getElementById("increess");
+let decreess = document.getElementById("decreess");
+
+let countdowns = 0;
+
+increess.addEventListener("click", () => {
+
+    countdowns = countdowns + 1;
+
+    countdownsElement.textContent = countdowns;
+
+});
 
 
+decreess.addEventListener("click", () => {
 
+     
+    countdowns = countdowns - 1;
+    countdownsElement.textContent = countdowns;
 
-
-
-
-
-
+});
