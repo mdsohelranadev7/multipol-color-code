@@ -120,25 +120,66 @@ startbtn.addEventListener('click', () => {
     playerOne.removeAttribute("hidden")
 })
 
-let countdownsElement = document.getElementById("countdowns");
-let increess = document.getElementById("increess");
-let decreess = document.getElementById("decreess");
-
-let countdowns = 0;
-
-increess.addEventListener("click", () => {
-
-    countdowns = countdowns + 1;
-
-    countdownsElement.textContent = countdowns;
-
-});
 
 
-decreess.addEventListener("click", () => {
 
-     
-    countdowns = countdowns - 1;
-    countdownsElement.textContent = countdowns;
 
-});
+let counter = document.getElementById('counter')
+let plus = document.getElementById('plus')
+let minus = document.getElementById('minus')
+
+let plusbtn = 0
+
+
+
+
+plus.addEventListener('click', () => {
+    plusbtn = plusbtn + 1
+
+    counter.textContent = plusbtn
+    if (plusbtn >= 10) {
+        plus.disabled = true
+        plus.style.opacity = "50%"
+        plus.classList.add('cursor-not-allowed')
+    }
+    else {
+        plus.disabled = false
+        plus.style.opacity = "100%"
+        plus.classList.remove('cursor-not-allowed')
+
+    }
+
+    minus.disabled = false;
+    minus.style.opacity = "100%";
+    minus.classList.remove('cursor-not-allowed');
+
+})
+
+
+minus.addEventListener('click', () => {
+    plusbtn = plusbtn - 1
+
+    counter.textContent = plusbtn
+    if (plusbtn <= 0) {
+        minus.disabled = true
+        minus.style.opacity = "50%"
+        minus.classList.add('cursor-not-allowed')
+    }
+    else {
+        minus.disabled = false
+        minus.style.opacity = "100%"
+        minus.classList.remove('cursor-not-allowed')
+
+    }
+
+    plus.disabled = false
+    plus.style.opacity = "100%"
+    plus.classList.remove('cursor-not-allowed')
+
+
+})
+
+
+
+
+// new 
