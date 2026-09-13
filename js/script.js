@@ -183,3 +183,44 @@ minus.addEventListener('click', () => {
 
 
 // new 
+
+
+
+let timer = document.getElementById("timer")
+let start = document.getElementById("start")
+let stop = document.getElementById("stop")
+
+
+
+
+const st = (duration) => {
+    let sks = duration
+
+    const timerinterval = setInterval(() => {
+
+        let minit = parseInt(sks / 60, 10)
+        let secound = parseInt(sks % 60, 10)
+        timer.textContent = minit + ":" + secound
+        if (sks-- <= 0) {
+
+            clearInterval(timerinterval);
+        
+
+        }
+
+
+    },1000)
+
+}
+
+start.addEventListener('click', () => {
+    let lefttimer = 5
+    st(lefttimer);
+})
+
+
+
+
+stop.addEventListener('click', () => {
+
+})
