@@ -214,9 +214,6 @@
   .mt-9 {
     margin-top: calc(var(--spacing) * 9);
   }
-  .mt-83 {
-    margin-top: calc(var(--spacing) * 83);
-  }
   .mt-83\.75 {
     margin-top: calc(var(--spacing) * 83.75);
   }
@@ -225,9 +222,6 @@
   }
   .mb-10 {
     margin-bottom: calc(var(--spacing) * 10);
-  }
-  .mb-11 {
-    margin-bottom: calc(var(--spacing) * 11);
   }
   .mb-11\.5 {
     margin-bottom: calc(var(--spacing) * 11.5);
@@ -240,9 +234,6 @@
   }
   .hidden {
     display: none;
-  }
-  .table {
-    display: table;
   }
   .h-33 {
     height: calc(var(--spacing) * 33);
@@ -265,9 +256,6 @@
   .max-w-main {
     max-width: var(--container-main);
   }
-  .border-collapse {
-    border-collapse: collapse;
-  }
   .translate-x-full {
     --tw-translate-x: 100%;
     translate: var(--tw-translate-x) var(--tw-translate-y);
@@ -277,9 +265,6 @@
   }
   .cursor-pointer {
     cursor: pointer;
-  }
-  .resize {
-    resize: both;
   }
   .flex-col {
     flex-direction: column;
@@ -348,14 +333,8 @@
   .px-15 {
     padding-inline: calc(var(--spacing) * 15);
   }
-  .px-21 {
-    padding-inline: calc(var(--spacing) * 21);
-  }
   .px-21\.5 {
     padding-inline: calc(var(--spacing) * 21.5);
-  }
-  .px-45 {
-    padding-inline: calc(var(--spacing) * 45);
   }
   .px-45\.25 {
     padding-inline: calc(var(--spacing) * 45.25);
@@ -412,27 +391,11 @@
   .uppercase {
     text-transform: uppercase;
   }
-  .underline {
-    text-decoration-line: underline;
-  }
   .opacity-0 {
     opacity: 0%;
   }
-  .opacity-0\.5 {
-    opacity: 0.5%;
-  }
-  .opacity-5 {
-    opacity: 5%;
-  }
-  .opacity-50 {
-    opacity: 50%;
-  }
   .opacity-100 {
     opacity: 100%;
-  }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
   }
   .duration-500 {
     --tw-duration: 500ms;
@@ -474,11 +437,6 @@
   syntax: "*";
   inherits: false;
 }
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
 @property --tw-duration {
   syntax: "*";
   inherits: false;
@@ -491,7 +449,6 @@
       --tw-translate-z: 0;
       --tw-border-style: solid;
       --tw-font-weight: initial;
-      --tw-outline-style: solid;
       --tw-duration: initial;
     }
   }

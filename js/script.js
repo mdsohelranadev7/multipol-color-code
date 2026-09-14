@@ -185,42 +185,49 @@ minus.addEventListener('click', () => {
 // new 
 
 
-
 let timer = document.getElementById("timer")
 let start = document.getElementById("start")
 let stop = document.getElementById("stop")
+let deleteinterval = null
+let usertime = 500  // ✅ 10 সেকেন্ড
+let isRunning = false
 
+let user = () => {
+    if (isRunning) return
 
+    isRunning = true
 
+    deleteinterval = setInterval(() => {
 
-const st = (duration) => {
-    let sks = duration
-
-    const timerinterval = setInterval(() => {
-
-        let minit = parseInt(sks / 60, 10)
-        let secound = parseInt(sks % 60, 10)
-        timer.textContent = minit + ":" + secound
-        if (sks-- <= 0) {
-
-            clearInterval(timerinterval);
-        
-
+        if (usertime <= 0) {
+            clearInterval(deleteinterval)
+            isRunning = false
+            timer.textContent = "00:00.00"
+            return
         }
 
+        usertime--
 
-    },1000)
+        let totalSeconds = parseInt(usertime / 100, 10)
+        let mili = parseInt((usertime % 100) / 10, 10)
 
+        let minit = parseInt(totalSeconds / 60, 10)
+        let secound = parseInt(totalSeconds % 60, 10)
+
+        let minits = minit < 10 ? "0" + minit : minit
+        let secounds = secound < 10 ? "0" + secound : secound
+        let milis = mili < 10 ? "0" + mili : mili
+
+        timer.textContent = minits + ":" + secounds + "." + milis
+
+    }, 10)  // ✅ প্রতি 10ms এ update
 }
 
 start.addEventListener('click', () => {
-    let lefttimer = 5
-    st(lefttimer);
+    user()
 })
 
-
-
-
 stop.addEventListener('click', () => {
-
+    clearInterval(deleteinterval)
+    isRunning = false
 })
