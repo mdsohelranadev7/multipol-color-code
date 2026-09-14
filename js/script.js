@@ -124,57 +124,55 @@ startbtn.addEventListener('click', () => {
 
 
 
-let counter = document.getElementById('counter')
-let plus = document.getElementById('plus')
-let minus = document.getElementById('minus')
-
-let plusbtn = 0
-
+let counter = document.getElementById("counter")
+let plus = document.getElementById("plus")
+let minus = document.getElementById("minus")
+let increes = 0
 
 
 
-plus.addEventListener('click', () => {
-    plusbtn = plusbtn + 1
+function nad() {
 
-    counter.textContent = plusbtn
-    if (plusbtn >= 10) {
+    if (increes >= 5) {
         plus.disabled = true
-        plus.style.opacity = "50%"
+        plus.style.opacity = '50%'
         plus.classList.add('cursor-not-allowed')
     }
+
     else {
         plus.disabled = false
-        plus.style.opacity = "100%"
+        plus.style.opacity = '100%'
         plus.classList.remove('cursor-not-allowed')
 
     }
 
-    minus.disabled = false;
-    minus.style.opacity = "100%";
-    minus.classList.remove('cursor-not-allowed');
-
-})
 
 
-minus.addEventListener('click', () => {
-    plusbtn = plusbtn - 1
 
-    counter.textContent = plusbtn
-    if (plusbtn <= 0) {
+    if (increes <= 0) {
         minus.disabled = true
-        minus.style.opacity = "50%"
+        minus.style.opacity = '50%'
         minus.classList.add('cursor-not-allowed')
     }
     else {
         minus.disabled = false
-        minus.style.opacity = "100%"
+        minus.style.opacity = '100%'
         minus.classList.remove('cursor-not-allowed')
-
     }
 
-    plus.disabled = false
-    plus.style.opacity = "100%"
-    plus.classList.remove('cursor-not-allowed')
+}
+
+plus.addEventListener('click', () => {
+
+    increes = increes + 1
+    counter.textContent = increes
+    nad()
+})
+
+minus.addEventListener('click', () => {
+    increes = increes - 1
+    counter.textContent = increes
+    nad()
 
 
 })
@@ -182,52 +180,81 @@ minus.addEventListener('click', () => {
 
 
 
-// new 
-
-
-let timer = document.getElementById("timer")
-let start = document.getElementById("start")
-let stop = document.getElementById("stop")
-let deleteinterval = null
-let usertime = 500  // ✅ 10 সেকেন্ড
+let timer = document.getElementById('timer')
+let start = document.getElementById('start')
+let stop = document.getElementById('stop')
+let usertime = 15
+let deleteinterval ; 
 let isRunning = false
 
-let user = () => {
+
+function finaltime() {
+    let minit = parseInt(usertime / 60, 10)
+    let secound = parseInt(usertime % 60, 10)
+
+
+    // let minits = minit < 10 ? "0" + minit : minit
+    // let secounds = secound < 10 ? "0" + secound : secound
+    let minits
+    if (minit < 10) {
+        minits = "0" + minit
+    } else {
+        minits = minit
+    }
+
+    let secounds
+    if (secound < 10) {
+        secounds = "0" + secound
+    } else {
+        secounds = secound
+    }
+
+    return minits + ":" + secounds
+
+}
+
+
+
+function soel() {
+
     if (isRunning) return
 
     isRunning = true
 
-    deleteinterval = setInterval(() => {
+
+
+
+     deleteinterval = setInterval(() => {
+
+        usertime--
+        timer.textContent = finaltime()
 
         if (usertime <= 0) {
             clearInterval(deleteinterval)
-            isRunning = false
-            timer.textContent = "00:00.00"
-            return
         }
 
-        usertime--
 
-        let totalSeconds = parseInt(usertime / 100, 10)
-        let mili = parseInt((usertime % 100) / 10, 10)
 
-        let minit = parseInt(totalSeconds / 60, 10)
-        let secound = parseInt(totalSeconds % 60, 10)
-
-        let minits = minit < 10 ? "0" + minit : minit
-        let secounds = secound < 10 ? "0" + secound : secound
-        let milis = mili < 10 ? "0" + mili : mili
-
-        timer.textContent = minits + ":" + secounds + "." + milis
-
-    }, 10)  // ✅ প্রতি 10ms এ update
+    }, 1000)
 }
 
 start.addEventListener('click', () => {
-    user()
+
+    soel()
 })
 
 stop.addEventListener('click', () => {
+
     clearInterval(deleteinterval)
-    isRunning = false
+     isRunning = false
+
 })
+
+
+
+
+
+
+
+
+
