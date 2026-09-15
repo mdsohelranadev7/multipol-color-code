@@ -184,7 +184,7 @@ let timer = document.getElementById('timer')
 let start = document.getElementById('start')
 let stop = document.getElementById('stop')
 let usertime = 15
-let deleteinterval ; 
+let deleteinterval;
 let isRunning = false
 
 
@@ -224,7 +224,7 @@ function soel() {
 
 
 
-     deleteinterval = setInterval(() => {
+    deleteinterval = setInterval(() => {
 
         usertime--
         timer.textContent = finaltime()
@@ -246,12 +246,53 @@ start.addEventListener('click', () => {
 stop.addEventListener('click', () => {
 
     clearInterval(deleteinterval)
-     isRunning = false
+    isRunning = false
 
 })
 
 
 
+
+
+let inputlast = document.getElementById("inputlast")
+let copy = document.getElementById("copy")
+let lastbtn = document.getElementById("lastbtn")
+let toast = document.getElementById("toast")
+
+function randomcolor() {
+    let redd = Math.floor(Math.random(2) * 255)
+    let greenn = Math.floor(Math.random() * 255)
+    let bluee = Math.floor(Math.random() * 255)
+
+    return ` #${redd.toString(16).padStart(2, '0')}${greenn.toString(16).padStart(2, '0')}${bluee.toString(16).padStart(2, '0')}`
+
+}
+lastbtn.addEventListener('click', () => {
+    const dkd = randomcolor()
+
+    lastdiv.style.background = dkd
+
+    inputlast.value = dkd
+
+})
+copy.addEventListener('click', () => {
+    navigator.clipboard.writeText(inputlast.value)
+    copy.innerText = "copeid"
+    toast.classList.remove('translate-x-12.5', 'opacity-0')
+
+    
+    setTimeout(() => {
+        toast.classList.add('translate-x-12.5', 'opacity-0')
+
+    }, 1000)
+
+
+    setTimeout(() => {
+
+        copy.innerText = "copy"
+    }, 1000)
+
+})
 
 
 
